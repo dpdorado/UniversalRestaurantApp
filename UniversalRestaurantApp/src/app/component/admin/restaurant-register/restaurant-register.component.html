@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                <h4>Registrar restaurante</h4>
+            </div>
+            <form id="restaurant-form" [formGroup]="myForm" (ngSubmit)="saveNewRestaurant()" class="card-body" >                
+
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Nombre: </label>
+                    <input type="text" name="name" [(ngModel)]="restaurant.name"  formControlName="name" placeholder="Nombre Restaurante" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['name'].errors && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
+                    <p >Field name is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Descripción: </label>
+                    <input type="text" name="description" [(ngModel)]="restaurant.description"  formControlName="description" placeholder="Descripción Restaurante" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['description'].errors && (myForm.controls['description'].dirty || myForm.controls['description'].touched)" class="alert alert-danger">
+                    <p >Field description is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Dirección: </label>
+                    <input type="text" name="address" [(ngModel)]="restaurant.address" formControlName="address" placeholder="Dirección Restaurante" class="form-control">
+                </div>                
+                <div *ngIf="myForm.controls['address'].errors && (myForm.controls['address'].dirty || myForm.controls['address'].touched)" class="alert alert-danger">
+                    <p >Field address is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Telefono: </label>
+                    <input type="text" name="phone" [(ngModel)]="restaurant.phone" formControlName="phone" placeholder="Teléfono Restaurante" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['phone'].errors && (myForm.controls['phone'].dirty || myForm.controls['phone'].touched)" class="alert alert-danger">
+                    <p >Field phone is required</p>
+                </div>                
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Link imagen: </label>
+                    <input type="text" id="imgProd" name="images" [(ngModel)]="restaurant.image" formControlName="images" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['images'].errors && (myForm.controls['images'].dirty || myForm.controls['images'].touched)" class="alert alert-danger">
+                    <p >Field image is required</p>
+                </div>                
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Dominio: </label>
+                    <input type="text" name="domain" [(ngModel)]="restaurant.domain" formControlName="domain" placeholder="Dominio Restaurante" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['domain'].errors && (myForm.controls['domain'].dirty || myForm.controls['domain'].touched)" class="alert alert-danger">
+                    <p >Field domain is required</p>
+                </div>               
+                <button class="btn btn-primary btn-block" type="submit"  >
+                    Guardar
+                </button >
+            </form>            
+        </div>
+    </div>
+    
+    <!--<div class="col-md-4">
+        <div id="restaurants-list"></div>
+    </div>-->
+    <br>
+    
+    <div class="">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                <h4>Visualización en el listado de restaurantes</h4>
+            </div>
+            <div class="card">
+                <img [src]= "restaurant.image == '' ? '../../assets/no-disponible.png' : restaurant.image" class="card-img-top">
+                <div class="card-body">
+                    <!--Si 'game.image' es un string vacío utilice la imagen por defecto sino use 'game.image'-->
+                    <h4 class="card-title">{{restaurant.name == '' ? 'Nombre del restaurante' : restaurant.name}}</h4>
+                    <div class="card-text">
+                        <p>{{restaurant.description == '' ? 'Write description restaurant' : restaurant.description}}</p>
+                        <p>{{restaurant.address == '' ? 'Write address restaurant' : restaurant.address}}</p>
+                        <p>{{restaurant.domain == '' ? 'Write domain restaurant' : restaurant.domain}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

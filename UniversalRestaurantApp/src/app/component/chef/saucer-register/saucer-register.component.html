@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                <h4>Registrar saucer</h4>
+            </div>
+            <form id="saucer-form" [formGroup]="myForm" (ngSubmit)="saveNewSaucer()" class="card-body" >                
+
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Nombre: </label>
+                    <input type="text" name="name" [(ngModel)]="saucer.name"  formControlName="name" placeholder="Nombre del plato" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['name'].errors && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="alert alert-danger">
+                    <p >Field name is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Descripción: </label>
+                    <input type="text" name="description" [(ngModel)]="saucer.description"  formControlName="description" placeholder="Descripción del plato" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['description'].errors && (myForm.controls['description'].dirty || myForm.controls['description'].touched)" class="alert alert-danger">
+                    <p >Field description is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Id restaurante: </label>
+                    <input type="text" name="restaurant_id" [(ngModel)]="saucer.restaurant_id" formControlName="restaurant_id" placeholder="Id del restaurante" class="form-control">
+                </div>                
+                <div *ngIf="myForm.controls['restaurant_id'].errors && (myForm.controls['restaurant_id'].dirty || myForm.controls['restaurant_id'].touched)" class="alert alert-danger">
+                    <p >Field address is required</p>
+                </div>
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Id categoria: </label>
+                    <input type="text" name="saucer_category_id" [(ngModel)]="saucer.saucer_category_id" formControlName="saucer_category_id" placeholder="Id de la categoria" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['saucer_category_id'].errors && (myForm.controls['saucer_category_id'].dirty || myForm.controls['saucer_category_id'].touched)" class="alert alert-danger">
+                    <p >Field phone is required</p>
+                </div>                
+                <div class="form-group required">
+                    <label for="" class="col-form-label">Link imagen: </label>
+                    <input type="text" id="imgProd" name="image" [(ngModel)]="saucer.image" formControlName="image" class="form-control">
+                </div>
+                <div *ngIf="myForm.controls['image'].errors && (myForm.controls['image'].dirty || myForm.controls['image'].touched)" class="alert alert-danger">
+                    <p >Field image is required</p>
+                </div>                                      
+                <button class="btn btn-primary btn-block" type="submit"  >
+                    Guardar
+                </button >
+            </form>            
+        </div>
+    </div>
+</div>
