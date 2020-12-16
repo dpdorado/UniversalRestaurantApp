@@ -26,6 +26,19 @@ import { RestaurantListComponent } from './user/restaurant-list/restaurant-list.
 import { SaucerRegisterComponent } from './chef/saucer-register/saucer-register.component';
 import { RestaurantRegisterComponent } from './admin/restaurant-register/restaurant-register.component';
 import { ARestaurantListComponent } from './admin/a-restaurant-list/a-restaurant-list.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './chef/home/home.component';
+import { ResgisterCategoryProductComponent } from './chef/resgister-category-product/resgister-category-product.component';
+import { ResgisterCategorySaucerComponent } from './chef/resgister-category-saucer/resgister-category-saucer.component';
+import { RegisterProductComponent } from './chef/register-product/register-product.component';
+import { SaucerListComponent } from './user/saucer-list/saucer-list.component';
+import { ProductListComponent } from './user/product-list/product-list.component';
+import { ListBuyComponent } from './user/list-buy/list-buy.component';
+import { SaucerEditComponent } from './user/saucer-edit/saucer-edit.component';
+import { ShoppingCartListComponent } from './cart/shopping-cart-list/shopping-cart-list.component';
+import { BillComponent } from './cart/bill/bill.component';
+import { WeeklySaucersComponent } from './weekly/weekly-saucers/weekly-saucers.component';
 
 @NgModule({
   imports: [
@@ -56,6 +69,19 @@ import { ARestaurantListComponent } from './admin/a-restaurant-list/a-restaurant
     SaucerRegisterComponent,
     RestaurantRegisterComponent,
     ARestaurantListComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ResgisterCategoryProductComponent,
+    ResgisterCategorySaucerComponent,
+    RegisterProductComponent,
+    SaucerListComponent,
+    ProductListComponent,
+    ListBuyComponent,
+    SaucerEditComponent,
+    ShoppingCartListComponent,
+    BillComponent,
+    WeeklySaucersComponent,
   ]
 })
 export class ComponentsModule {}

@@ -36,7 +36,6 @@ export class ARestaurantListComponent implements OnInit {
         this.router.navigateByUrl('/component/admin/a-restaurant-list');
       },
       err => console.log(err)
-    )
-    
+    )    
   }
 }

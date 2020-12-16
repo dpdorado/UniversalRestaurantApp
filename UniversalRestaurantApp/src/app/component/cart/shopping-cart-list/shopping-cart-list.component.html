@@ -1,0 +1,99 @@
+
+<div class="container-fluit">
+    <div class="card border border-primary">
+        <div class="card-header text-white bg-primary">
+                 <h3>Carrito de compras</h3>
+        </div>
+        <div class="card-body">
+            <div class="">
+                <div class="card">
+                <form class="card-body" method="post">    
+                    <div class="form-group row">
+                        <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                        <div class="col-12 col-md-10">
+                            <input type="text" [(ngModel)]="shoppingCart.name" class="form-control" placeholder="Ingresa nombre cliente" name="destinatario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-12 col-md-2 col-form-label h2">Telefono :</label>
+                        <div class="col-12 col-md-10">
+                            <input type="text" [(ngModel)]="shoppingCart.phone" class="form-control" placeholder="Ingresa numero" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                        <div class="col-12 col-md-10">
+                            <input type="text" [(ngModel)]="shoppingCart.email" class="form-control" placeholder="Ingresa tu correo" name="email">
+                        </div>
+                    </div>        
+                    <div class="form-group row">
+                        <label for="email" class="col-6 col-md-2 col-form-label h2">Forma de pago:</label>
+                        <div class="col-12 col-md-10">
+                            <select class="form-control" [(ngModel)]="shoppingCart.payment" name="payment">
+                                <option></option>
+                                <option [ngValue]="'Contado'">Contado</option>
+                                <option [ngValue]="'TarjetaCredito'">Tarjeta Credito</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-12 col-md-2 col-form-label h2">Dirección:</label>
+                        <div class="col-6 col-md-10">
+                            <input type="text" [(ngModel)]="shoppingCart.address" class="form-control" placeholder="Ingresa tu domicilio" name="address">
+                        </div>
+                    </div>
+                
+                    <div id="carrito" class="form-group table-responsive">
+                        <table class="table" id="lista-compra">
+                            <thead>
+                                <tr class="table-info">
+                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th></th>             
+                                </tr>
+                
+                            </thead>
+                            <tbody>
+                                <tr class="table-success" *ngFor="let items of itemsShopCart">
+                                    <!--<td *ngIf="items.saucer!=null">{{items.saucer.id}}</td>-->
+                                    <td *ngIf="items!=null">{{items.product.id}}</td>
+                                    <td *ngIf="items!=null">{{items.product.name}}</td>
+                                    <td *ngIf="items!=null">{{items.unit_price | number}}</td>
+                                    <td *ngIf="items!=null">{{items.quantity}}</td>
+                                    <td><button class="btn btn-info border-warning" (click)="deleteItem(items.id)"><i class="fas fa-trash-alt"></i></button></td>
+                                </tr>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="font-weight-bold">Total</td>
+                                    <!--<td><b>{{shopCart.total}}</b></td>-->
+                                </tr>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <div class="row justify-content-center" id="loaders">
+                        <img id="cargando" src="../../../../assets/assets/cargando.gif" width="100">
+                    </div>
+                
+                    <div class="row justify-content-between">
+                        <div class="col-md-4 mb-2">
+                            <a [routerLink]="['/component/cart/bill']" class="btn btn-info btn-block">Seguir comprando</a>
+                        </div>
+                        <div class="col-xs-12 col-md-4">                            
+                            <a [routerLink]="['/component/cart/bill']" id="procesar-compra" class="btn btn-success btn-block">
+                                Realizar compra
+                            </a>                
+                        </div>
+                    </div>
+                </form>
+                </div>
+                </div>
+            
+        </div>
+    </div>    
+</div>

@@ -4,5 +4,6 @@ export interface Saucer {
     description?: string;
     restaurant_id?: string;
     saucer_category_id?: string;   
-    image?: string;    
+    image?: string;  
+    products?:[];      
 }

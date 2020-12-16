@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { RestaurantsService } from '../../../services/restaurant/restaurants.service';
+import { UsersService } from '../../../services/auth/users.service';
 
 @Component({
   selector: 'app-restaurant-register',
@@ -23,7 +24,7 @@ export class RestaurantRegisterComponent implements OnInit {
 
   edit: boolean = false;
 
-  constructor(private restaurantsService: RestaurantsService,
+  constructor(public userService: UsersService,private restaurantsService: RestaurantsService,
     private router: Router, private activatedRoute: ActivatedRoute, public fb: FormBuilder
     ) {
       this.myForm = this.fb.group({
@@ -54,9 +55,10 @@ export class RestaurantRegisterComponent implements OnInit {
 
 
   saveNewRestaurant (){         
-    console.log(this.myForm.value);
+    var headers = { 'Authorization': "Bearer " + this.userService.getToken()};        
+    //console.log(this.myForm.value);
     if (this.myForm.valid) {      
-      this.restaurantsService.saveRestaurant(this.restaurant)
+      this.restaurantsService.saveRestaurant(this.restaurant, headers)
       .subscribe(res => { 
         console.log(res)
         alert("Restaurant registered"); 

@@ -1,9 +1,9 @@
-export interface Product {
-    id?: string;
+export interface Product {    
     name?: string;
     description?: string;
     cost?: string;
     stock?: number;   
-    images: string[];
-    category_product?: string[];
+    restaurant_id?:string;
+    categories_product_id: string;
+    image?: string;
 }

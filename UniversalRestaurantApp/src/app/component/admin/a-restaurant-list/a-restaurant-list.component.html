@@ -1,33 +1,48 @@
-<div class="container p-2">
-    <div class="row">
-        <h1 class="title font-weight"> Restaurantes Afiliados </h1>        
+<!--<div class="container-fluit">
+    <div class="card border border-primary">
+        <div class="card-header text-white bg-primary">
+                 
+        </div>
+        <div class="card-body">
+
+        </div>
     </div>    
-</div>
-<div class="row">    
-    <div class="col-12">       
-        <!-- column -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6" *ngFor="let restaurant of restaurants">
-                <!-- Card -->
-                <div class="card">                    
-                    <img class="card-img-top img-responsive" [src]="restaurant.image" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">{{restaurant.name}}</h4>
-                        <div class="card-text">
-                            <h5>{{restaurant.description}}, {{restaurant.direction}}</h5>
-                            <p>Tel: {{restaurant.phone}}</p>                    
+</div>-->
+<div class="container-fluit">
+    <div class="card border border-primary">
+        <div class="card-header text-white bg-primary">
+            <h3> Restaurantes Afiliados </h3>                 
+        </div>
+        <div class="card-body">
+            <div class="row">    
+                <div class="col-12">       
+                    <!-- column -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6" *ngFor="let restaurant of restaurants">
+                            <!-- Card -->
+                            <div class="card border border-primary">                    
+                                <img class="card-img-top img-responsive" [src]="restaurant.image" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{restaurant.name}}</h4>
+                                    <div class="card-text">
+                                        <h5>{{restaurant.description}}, {{restaurant.direction}}</h5>
+                                        <p>Tel: {{restaurant.phone}}</p>                    
+                                    </div>
+                                    <div>                                
+                                        <button class="btn btn-danger btn-primary-spacing" (click)="deleteRestaurant(restaurant.id)" role="button"> <i class="mdi mdi-close-box"></i></button>
+                                        <button class="btn btn-success btn-primary-spacing" [routerLink]="['/component/admin/restaurant-update', restaurant.id]" role="button"><i class="mdi mdi-pencil"></i></button>                                                                                
+                                        <button class="btn btn-primary btn-primary-spacing" [routerLink]="" role="button"><i class="mdi mdi-plus-box"></i></button>
+                                        <!--<a class="btn btn-primary btn-primary-spacing" [routerLink]="['/restaurant/list-buy/', restaurant.id]" role="button">Ingresar</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
                         </div>
-                        <div>                                
-                            <button class="btn btn-danger btn-primary-spacing" (click)="deleteRestaurant(restaurant.id)" role="button">Eliminar</button>
-                            <button class="btn btn-success btn-primary-spacing" [routerLink]="['/component/admin/restaurant-update', restaurant.id]" role="button">Editar</button>
-                            <button class="btn btn-primary btn-primary-spacing" (click)="deleteRestaurant(restaurant.id)" role="button">Ingresar</button>
-                            <!--<a class="btn btn-primary btn-primary-spacing" [routerLink]="['/restaurant/list-buy/', restaurant.id]" role="button">Ingresar</a>-->
-                        </div>
+                        <!-- column -->
                     </div>
                 </div>
-                <!-- Card -->
             </div>
-            <!-- column -->
+            
         </div>
-    </div>
+    </div>    
 </div>

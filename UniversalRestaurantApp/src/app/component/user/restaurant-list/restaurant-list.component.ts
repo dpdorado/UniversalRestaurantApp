@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RestaurantsService } from '../../../services/restaurant/restaurants.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RestaurantListComponent implements OnInit {
 
   restaurants: any = [];
 
-  constructor(private restaurantService: RestaurantsService) { }
+  constructor(private restaurantService: RestaurantsService, private router: Router, private activatedRoute: ActivatedRoute) { }
   
   ngOnInit(): void {
     this.getRestaurants();
@@ -25,6 +26,10 @@ export class RestaurantListComponent implements OnInit {
       },
       err => console.log(err)
     )
+  }
+
+  listBuy(restaurant: any){
+    this.router.navigateByUrl('/component/user/list-buy', restaurant);
   }
 
 }

@@ -23,8 +23,8 @@ export class SaucersService {
     return this.http.get(`${this.API_URI}/restaurants/${id}`);
   }
 
-  saveSaucer(saucer: Saucer){
-    return this.http.post(`${this.API_URI}/saucer/register`, saucer);
+  saveSaucer(saucer: Saucer, headers: any){
+    return this.http.post(`${this.API_URI}/saucer/register`, saucer, headers);
   }
 
   deleteSaucer(id: string) {

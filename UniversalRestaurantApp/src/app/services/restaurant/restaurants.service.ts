@@ -22,8 +22,8 @@ export class RestaurantsService {
     return this.http.get(`${this.API_URI}/restaurants/${id}`);
   }
 
-  saveRestaurant(restaurant: Restaurant){
-    return this.http.post(`${this.API_URI}/restaurants/register`, restaurant);
+  saveRestaurant(restaurant: Restaurant, headers:any){
+    return this.http.post(`${this.API_URI}/restaurants/register`, restaurant, headers);
   }
 
   deleteRestaurant(id: string) {

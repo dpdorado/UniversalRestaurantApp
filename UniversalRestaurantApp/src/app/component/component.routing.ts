@@ -19,9 +19,17 @@ import { RestaurantListComponent } from './user/restaurant-list/restaurant-list.
 import { SaucerRegisterComponent } from './chef/saucer-register/saucer-register.component';
 import { RestaurantRegisterComponent } from './admin/restaurant-register/restaurant-register.component';
 import { ARestaurantListComponent } from './admin/a-restaurant-list/a-restaurant-list.component';
-
-
-
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './chef/home/home.component';
+import { RegisterProductComponent } from './chef/register-product/register-product.component';
+import { ResgisterCategoryProductComponent } from './chef/resgister-category-product/resgister-category-product.component';
+import { ResgisterCategorySaucerComponent } from './chef/resgister-category-saucer/resgister-category-saucer.component';
+import { ListBuyComponent } from './user/list-buy/list-buy.component';
+import { SaucerEditComponent } from './user/saucer-edit/saucer-edit.component';
+import { ShoppingCartListComponent } from './cart/shopping-cart-list/shopping-cart-list.component';
+import { BillComponent } from './cart/bill/bill.component';
+import { WeeklySaucersComponent } from './weekly/weekly-saucers/weekly-saucers.component';
 export const ComponentsRoutes: Routes = [
 	{
 		path: '',
@@ -39,6 +47,91 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
+				path: 'login',
+				component: LoginComponent,
+				data: {
+					title: 'Login',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Login' }
+					]
+				}
+			},
+			{
+				path: 'register',
+				component: RegisterComponent,
+				data: {
+					title: 'Register',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Register' }
+					]
+				}
+			},
+			{
+				path: 'cart/shopping-cart-list',
+				component: ShoppingCartListComponent,
+				data: {
+					title: 'Listado de compras',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Listado de compras' }
+					]
+				}
+			},	
+			{				
+				path: 'cart/bill',
+				component: BillComponent,
+				data: {
+					title: 'Bill',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Bill' }
+					]
+				}
+			},					
+			{				
+				path: 'weekly/weekly-saucer',
+				component: WeeklySaucersComponent,
+				data: {
+					title: 'Semanario',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Semanario' }
+					]
+				}
+			},				
+			{
+				
+				path: 'user/list-buy/:id',
+				component: ListBuyComponent,
+				data: {
+					title: 'Lista de productos y platos',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Lista de productos y platos' }
+					]
+				}
+			},		
+			{
+				path: 'user/saucer-edit/:id_r/:id_s',
+				component: SaucerEditComponent,
+				data: {
+					title: 'Personalizar plato',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'vPersonalizar plato' }
+					]
+				}
+			},					
+			{
 				path: 'user/restaurants',
 				component: RestaurantListComponent,
 				data: {
@@ -51,6 +144,30 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
+				path: 'chef/home',
+				component: HomeComponent,
+				data: {
+					title: 'Home chef',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'home chef' }
+					]
+				}
+			},
+			{
+				path: 'chef/register-product',
+				component: RegisterProductComponent,
+				data: {
+					title: 'Product register',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Product register' }
+					]
+				}
+			},
+			{
 				path: 'chef/saucer-register',
 				component: SaucerRegisterComponent,
 				data: {
@@ -59,6 +176,30 @@ export const ComponentsRoutes: Routes = [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Saucer register' }
+					]
+				}
+			},
+			{
+				path: 'chef/register-category-product',
+				component: ResgisterCategoryProductComponent,
+				data: {
+					title: 'Product category register',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Product category register' }
+					]
+				}
+			},
+			{
+				path: 'chef/register-category-saucer',
+				component: ResgisterCategorySaucerComponent,
+				data: {
+					title: 'Saucer category register',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Saucer category register' }
 					]
 				}
 			},
